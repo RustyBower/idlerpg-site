@@ -25,6 +25,7 @@
         }
             $hits = file("hits.db");
             $fp = fopen("hits.db", "w");
+			$found = 0;
             $thispage = explode("/",$_SERVER['PHP_SELF']);
             $thispage = array_pop($thispage);
             if ($fp == false) {

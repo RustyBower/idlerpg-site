@@ -146,7 +146,7 @@ Based on a work at http://idlerpg.net/.
                     <li<?php if ($BASEURL . 'worldmap.php' == $_SERVER['PHP_SELF']) { echo " class=active";}?>><a href="<?php $BASEURL; ?>worldmap.php">World Map</a></li>
                     <li<?php if ($BASEURL . 'quest.php' == $_SERVER['PHP_SELF']) { echo " class=active";}?>><a href="<?php $BASEURL; ?>quest.php">Quest Info</a></li>
                     <li<?php if ($BASEURL . 'contact.php' == $_SERVER['PHP_SELF']) { echo " class=active";}?>><a href="<?php $BASEURL; ?>contact.php">Contact</a></li>
-                    <li><a href="https://github.com/adamus1red/idlerpg-site/">Site Source</a></li>
+                    <li><a href="https://github.com/rustybower/idlerpg-site/">Site Source</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

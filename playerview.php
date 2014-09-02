@@ -13,13 +13,13 @@
     
     include("header.php");
     include("commonfunctions.php");
-    echo "<ul class="nav nav-tabs" id="myTab">\n".
-         "<li class="active"><a href="#home">Player Info</a></li>\n".
-         "<li><a href="#items">Items</a></li>\n".
-         "<li><a href="#penalties">Penalties</a></li>\n".
-         "<li><a href="#modifiers">Character Modifiers</a></li>\n".
+    echo "<ul class=\"nav nav-tabs\" id=\"myTab\">\n".
+         "<li class=\"active\"><a href=\"#home\">Player Info</a></li>\n".
+         "<li><a href=\"#items\">Items</a></li>\n".
+         "<li><a href=\"#penalties\">Penalties</a></li>\n".
+         "<li><a href=\"#modifiers\">Character Modifiers</a></li>\n".
          "<ul>\n".
-         "<div class="tab-content">\n";
+         "<div class=\"tab-content\">\n";
     $file = fopen($irpg_db,"r");
     fgets($file,1024); // skip top comment
     $found=0;
@@ -56,7 +56,7 @@
     else {
         $class=htmlentities($class);
         /* if we htmlentities($user), then we cannot use links with it. */
-        echo "<div class="tab-pane fade active" id="home">".
+        echo "<div class=\"tab-pane fade active\" id=\"home\">".
              "<summary>\n".
              "      <p><span class=\"lead\"><b>User:</b> ".htmlentities($user)."</span><br />\n".
              "      <b>Class:</b> $class<br />\n".
@@ -75,7 +75,7 @@
              "    <h2>Map</h2>\n".
              "    ".($showmap?"<div id=\"map\"><img src=\"makemap.php?player=".urlencode($user)."\"></div>\n\n":"<p><a href=\"?player=".urlencode($user)."&showmap=1\">Show map</a></p>\n\n")."".
              "</div>".
-             "<div class="tab-pane" id="items">\n".
+             "<div class=\"tab-pane\" id=\"items\">\n".
              "    <h2>Items</h2>\n<p>";
         ksort($item);
         $sum = 0;
@@ -111,7 +111,7 @@
         echo "      <br />\n      sum: $sum<br />\n".
              "    </p>\n".
              "</div>\n".
-             "<div class="tab-pane" id="penalties">\n".
+             "<div class=\"tab-pane\" id=\"penalties\">\n".
              "    <h2>Penalties</h2>\n".
              "    <p>\n";
 
@@ -137,7 +137,7 @@
         }
         fclose($file);
         echo "</div>\n".
-             "<div class="tab-pane fade" id="modifiers">";
+             "<div class=\"tab-pane fade\" id=\"modifiers\">";
         if (!is_null($temp) && count($temp)) {
             echo('<h2>');
             echo $_GET['allmods']!=1?"Recent ":"";
