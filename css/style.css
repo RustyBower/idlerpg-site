@@ -39,3 +39,6 @@
 div.tab-pane #map {
 	background-image: url(../newmap.png);
 }
+.row-fluid.offline {
+	background-color: #CCC;
+}

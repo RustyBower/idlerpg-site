@@ -25,8 +25,8 @@
         $class = htmlentities($class);
         $next_level = duration($secs);
 ?>
-    <div class="row-fluid clearfix">
-        <div class="col-sm-2 <?php echo (!$online?"\"offline\"":"")?>">
+    <div class="row-fluid <?php echo (!$online?"offline ":"")?>clearfix">
+        <div class="col-sm-2">
             <strong><a href="playerview.php?player=<?php echo urlencode($user); ?>"><?php echo htmlentities($user); ?></a></strong>
         </div>
         <div class="col-sm-2">
