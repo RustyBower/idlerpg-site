@@ -11,9 +11,9 @@
   <div>
     <div class="row-fluid">
       <div class="col-sm-2"></div>
-      <div class="col-sm-2">Level</div>
-      <div class="col-sm-4">Class</div>
-      <div class="col-sm-4">Next level</div>
+      <div class="col-sm-2"><strong>Level</strong></div>
+      <div class="col-sm-4"><strong>Class</strong></div>
+      <div class="col-sm-4"><strong>Next level</strong></div>
     </div>
 <?php
     $file = file($irpg_db);
@@ -30,13 +30,13 @@
             <strong><a href="playerview.php?player=<?php echo urlencode($user); ?>"><?php echo htmlentities($user); ?></a></strong>
         </div>
         <div class="col-sm-2">
-            Level: <?php echo $level; ?>
+            <?php echo $level; ?>
         </div>
         <div class="col-sm-4">
-            Class: <?php echo $class; ?>
+            <?php echo $class; ?>
         </div>
         <div class="col-sm-4">
-            Next level in <?php echo $next_level; ?>
+            <?php echo $next_level; ?>
         </div>
         <br />
     </div>
