@@ -9,19 +9,18 @@
 
 
 <div id="map">
-    <img src="makeworldmap.php" alt="IdleRPG World Map" title="IdleRPG World Map" usemap="#world" border="0" />
-    <map id="world" name="world">
+    <img src="newmap.png" class="themap" />
+    <img src="makeworldmap.php" class="theplayers" alt="IdleRPG World Map" title="IdleRPG World Map" border="0" />
 <?php
     $file = fopen($irpg_db,"r");
     fgets($file);
     while($location=fgets($file)) {
         list($who,,,,,,,,,,$x,$y) = explode("\t",trim($location));
-        print "        <area shape=\"circle\" coords=\"".$x.",".$y.",6\" alt=\"".htmlentities($who).
-              "\" href=\"playerview.php?player=".urlencode($who)."\" title=\"".htmlentities($who)."\" />\n";
+        print '    <span style="left:'.($x/$mapx*100).'%;top:'.($y/$mapx*100).'%;"><a title="'.htmlentities($who).
+        '" href="playerview.php?player='.urlencode($who).'">'.htmlentities($who).'</a></span>'."\n";
     }
     fclose($file);
 ?>
-    </map>
 </div>
 
 <?php include("footer.php");?>

@@ -1,0 +1,44 @@
+.wrap {
+	margin-top: 60px;
+}
+#map {
+	max-width: 500px;
+	max-height: 500px;
+	position: relative;
+}
+#map img.themap {
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+}
+#map img.theplayers {
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+}
+#map span {
+	display: block;
+	position:absolute;
+}
+#map a {
+	position: relative;
+	top: -4px;
+	left: -4px;
+	display: block;
+	width: 9px;
+	height: 9px;
+	text-indent: -10000px;
+	overflow: hidden;
+}
+div.tab-pane #map {
+	background-image: url(../newmap.png);
+}
+.row-fluid.offline {
+	background-color: #CCC;
+}
