@@ -18,7 +18,7 @@
          "<li><a href=\"#items\">Items</a></li>\n".
          "<li><a href=\"#penalties\">Penalties</a></li>\n".
          "<li><a href=\"#modifiers\">Character Modifiers</a></li>\n".
-         "<ul>\n".
+         "</ul>\n".
          "<div class=\"tab-content\">\n";
     $file = fopen($irpg_db,"r");
     fgets($file,1024); // skip top comment
@@ -56,8 +56,8 @@
     else {
         $class=htmlentities($class);
         /* if we htmlentities($user), then we cannot use links with it. */
-        echo "<div class=\"tab-pane fade active\" id=\"home\">".
-             "<summary>\n".
+        echo "<div class=\"tab-pane active\" id=\"home\">".
+             "<h2>Summary</h2>\n".
              "      <p><span class=\"lead\"><b>User:</b> ".htmlentities($user)."</span><br />\n".
              "      <b>Class:</b> $class<br />\n".
              "      <b>Admin?:</b> ".($isadmin?"Yes":"No")."<br />\n".
@@ -71,7 +71,7 @@
              "      <b>Current position:</b> [$x,$y]<br />\n".
              "      <b>Alignment:</b> ".($alignment=='e'?"Evil":($alignment=='n'?"Neutral":"Good"))."<br />\n".
              "      <b>XML:</b> [<a href=\"xml.php?player=".urlencode($user)."\">link</a>]</p>\n".
-             "</summary>\n".
+             "\n".
              "    <h2>Map</h2>\n".
              "    ".($showmap?"<div id=\"map\"><img src=\"makemap.php?player=".urlencode($user)."\"></div>\n\n":"<p><a href=\"?player=".urlencode($user)."&showmap=1\">Show map</a></p>\n\n")."".
              "</div>".
@@ -168,11 +168,6 @@
 <?php
         }
         echo "</div>\n";
-        echo "<script>\n".
-             "  $(function () {\n".
-             "     $('#myTab a:last').tab('show')\n".
-             "  })\n".
-             "</script>\n";
     }
     include("footer.php");
 ?>

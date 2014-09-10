@@ -12,112 +12,12 @@ Based on a work at http://idlerpg.net/.
     <title><?php echo $irpg_chan;?> Idle RPG: <?php echo $irpg_page_title;?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="<?php echo $BASEURL;?>js/jquery.js"></script>
+    <script type="text/javascript" src="<?php echo $BASEURL;?>js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo $BASEURL;?>js/scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo $BASEURL; ?>theme/classic/css/style.css" media="screen">
+    <link href="<?php echo $BASEURL; ?>css/style.css" rel="stylesheet" media="screen">
 <?php
-        if ($style == null) {
-            echo '    <link rel="stylesheet" type="text/css" href="'.$BASEURL.'theme/classic/css/style.css" media="screen">'."\n".
-                 '    <link href="'.$BASEURL.'theme/classic/css/style-responsive.css" rel="stylesheet" media="screen">';
-        } else {
-            echo '    <link rel="stylesheet" type="text/css" href="'.$BASEURL.'theme/'.$style.'/css/style.css" media="screen">'."\n".
-                 '    <link href="'.$BASEURL.'theme/'.$style.'/css/style-responsive.css" rel="stylesheet" media="screen">';
-        }
-    ?>
-    <style type="text/css">
-        <!-- Global Styles -->
-        body {
-            
-        }
-        .wrap {
-            padding-top: 60px;
-        }
-        
-        .container {
-            margin: 0 auto;
-            max-width: 1000px;
-        }
-        .container > hr {
-            margin: 60px 0;
-        }
-        .container-fluid {
-            margin: 0 auto;
-            max-width: 1000px;
-        }
-        
-        <!-- responsive stuff -->
-        @media (max-width: 980px) {
-        /* Enable use of floated navbar text */
-            .navbar-text.pull-right {
-            float: none;
-            padding-left: 5px;
-            padding-right: 5px;
-            }
-        }
-<?php 
-        if ($_SERVER['PHP_SELF'] == $BASEURL . 'index.php') {
-            echo "        /* index styles */\n".
-                 "        table.uniques {\n".
-                 "          border: 1px solid #c0c0c0;\n".
-                 "          padding: 5px;\n".
-                 "          text-align: left;\n".
-                 "        }\n".
-                 "        table.uniques td {\n".
-                 "          padding-left: 10px;\n".
-                 "        }\n".
-                 "        table.penalty {\n".
-                 "        border: 1px solid #c0c0c0;\n".
-                 "        padding: 5px;\n".
-                 "        text-align: left;\n".
-                 "        }\n".
-                 "        table.penalty th {\n".
-                 "            text-align: right;\n".
-                 "        }\n";
-        } else if ($_SERVER['PHP_SELF'] == $BASEURL . 'players.php') {
-            echo "       /* player page */\n".
-                 "        li.online { font-weight: bold; }\n".
-                 "        li.offline { color: #c0c0c0; }\n".
-                 "        a.offline { color: #707070; }\n".
-                 "        #map {\n".
-                 "          width: 500px;\n".
-                 "          height: 500px;\n".
-                 "          background-image: url(newmap.png);\n".
-                 "        }\n".
-                 "        table.forum {\n".
-                 "            border: 1px solid #c0c0c0;\n".
-                 "            table-layout: fixed;\n".
-                 "            overflow: auto;\n".
-                 "        }\n".
-                 "        table.forum td,tr,caption,thead,tfoot,th {\n".
-                 "            padding-left: 10px;\n".
-                 "            padding-right: 10px;\n".
-                 "        }\n".
-                 "        .tdblue { background-color: #ffffdf; }\n".
-                 "        .tdgray { background-color: #eeeee0; }\n".
-                 "        .tdred {\n".
-                 "            border: 1px solid red;\n".
-                 "            background-color: #FFCCCC;\n".
-                 "        }\n".
-                 "        .smallest {\n".
-                 "            font-size: 11px;\n".
-                 "        }\n";
-        } else if ($_SERVER['PHP_SELF'] == $BASEURL . 'worldmap.php') {
-            echo "        #map {\n".
-                 "            width: 500px;\n".
-                 "            height: 500px;\n".
-                 "            background-image: url(newmap.png);\n".
-                 "        }\n";
-        } else if ($_SERVER['PHP_SELF'] == $BASEURL . 'playerview.php') {
-            echo "        #map {\n".
-                 "            width: 500px;\n".
-                 "            height: 500px;\n".
-                 "            background-image: url(newmap.png);\n".
-                 "        }\n";
-        } else if ($_SERVER['PHP_SELF'] == $BASEURL . 'quest.php') {
-            echo "        #map {\n".
-                 "            width: 500px;\n".
-                 "            height: 500px;\n".
-                 "            background-image: url(newmap.png);\n".
-                 "        }\n";
-        }
-        echo "    </style>\n";
         if ($enable_analytics == True) {
             include("analytics.php");
         }
