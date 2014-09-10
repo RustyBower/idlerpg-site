@@ -12,8 +12,9 @@ Based on a work at http://idlerpg.net/.
     <title><?php echo $irpg_chan;?> Idle RPG: <?php echo $irpg_page_title;?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="<?php echo $BASEURL;?>js/jquery.js"></script>
-    <script src="<?php echo $BASEURL;?>js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo $BASEURL;?>js/jquery.js"></script>
+    <script type="text/javascript" src="<?php echo $BASEURL;?>js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo $BASEURL;?>js/scripts.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo $BASEURL; ?>theme/classic/css/style.css" media="screen">
     <link href="<?php echo $BASEURL; ?>css/style.css" rel="stylesheet" media="screen">
 <?php

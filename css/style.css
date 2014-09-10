@@ -36,3 +36,6 @@
 	text-indent: -10000px;
 	overflow: hidden;
 }
+div.tab-pane #map {
+	background-image: url(../newmap.png);
+}
