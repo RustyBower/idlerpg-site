@@ -7,17 +7,7 @@
 
   <h2>Pick a player to view</h2>
   <p class="small">[gray=offline]</p>
-<<<<<<< HEAD
-  <div>
-    <div class="row-fluid">
-      <div class="col-sm-2"></div>
-      <div class="col-sm-2"><strong>Level</strong></div>
-      <div class="col-sm-4"><strong>Class</strong></div>
-      <div class="col-sm-4"><strong>Next level</strong></div>
-    </div>
-=======
   <ol>
->>>>>>> upstream/master
 <?php
     $file = file($irpg_db);
     unset($file[0]);
@@ -27,33 +17,11 @@
         
         $class = htmlentities($class);
         $next_level = duration($secs);
-<<<<<<< HEAD
-?>
-    <div class="row-fluid <?php echo (!$online?"offline ":"")?>clearfix">
-        <div class="col-sm-2">
-            <strong><a href="playerview.php?player=<?php echo urlencode($user); ?>"><?php echo htmlentities($user); ?></a></strong>
-        </div>
-        <div class="col-sm-2">
-            <?php echo $level; ?>
-        </div>
-        <div class="col-sm-4">
-            <?php echo $class; ?>
-        </div>
-        <div class="col-sm-4">
-            <?php echo $next_level; ?>
-        </div>
-        <br />
-    </div>
-<?php
-=======
-
         print "    <li".(!$online?" class=\"offline\"":"")."><a".
               (!$online?" class=\"offline\"":"").
               " href=\"playerview.php?player=".urlencode($user).
               "\">".htmlentities($user).
               "</a>, the level $level $class. Next level in $next_level.</li>\n";
-
->>>>>>> upstream/master
     }
 ?>
   </div>
