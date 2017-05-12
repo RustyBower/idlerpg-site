@@ -1,13 +1,13 @@
 <?php
 
-$admin_email="mrr@digitalirc.org";
-$admin_nick="MrRandom";
+$admin_email="rusty@rustybower.com";
+$admin_nick="RustyCloud";
 
 // nickname of your bot
 $irpg_bot="irpgbot";
 
 // your game's server
-$irpg_network="irc.digitalirc.org";
+$irpg_network="irc.129irc.com";
 
 // your game's channel
 $irpg_chan="#IdleRPG";
@@ -15,24 +15,24 @@ $irpg_chan="#IdleRPG";
 // full or relative pathname to the DBs:
 
 // character database
-$irpg_db="/home/jotun/irpg.db";
+$irpg_db="/opt/idlerpg/irpg.db";
 
 // item database
 $irpg_itemdb="../mapitems.db";
 
 // time modifiers file
-$irpg_mod="/home/jotun/modifiers.txt";
+$irpg_mod="/opt/idlerpg/modifiers.txt";
 
 // active quest info file
-$irpg_qfile="/home/jotun/questinfo.txt";
+$irpg_qfile="/opt/idlerpg/questinfo.txt";
 
-$net_url="http://digitalirc.org";
-$net_serverurl="http://digitalirc.org/wiki/servers";
-$net_name="Digital IRC Network";
+$net_url="http://idlerpg.129irc.com";
+$net_serverurl="http://idlerpg.129irc.com/wiki/servers";
+$net_name="the129 IRC Network";
 
 // directory in which your site is located from the root directory. my site
 // is http://jotun.ultrazone.org/g7/, so it's "/g7/"
-$BASEURL="/~torrent/dev/";
+$BASEURL="/";
 
 // width-wise dimension of your map file
 $mapx = 500;
