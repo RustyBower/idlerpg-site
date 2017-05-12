@@ -7,3 +7,6 @@ php:
   - '7.1'
   - hhvm
   - nightly
+notifications:
+  slack:
+    on_success: always
