@@ -1,28 +1,7 @@
-    </div>
-    <hr>
-    <div class="footer">
-        <div class="container">
-        <p class="pull-right">Made with <a href="http://php.net/">php</a>, 
-        <a href="http://twitter.github.io/bootstrap/">bootstrap</a> and 
-        <a href="<?php echo $net_url;?>"><?php echo $net_name;?></a><br />
-        <a rel="license" href="<?php echo $BASEURL;?>licence.php">
-        <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" />
-        </a>
-        <?php
-        if ($style == null) {
-            echo '        Using classic theme.</p>';
-        } else {
-            echo '        Using '.$style.' theme.</p>';
-        }
-        ?>
-        <p><a href="contact.php">contact us</a> or 
+        </div>
+        <div class="footer">
+            <p class="small">Questions? Comments? Suggestions? Bugs? Naked pics? <a href="contact.php"><?php print $admin_email?></a> or <?php print $admin_nick?>@IRC.
 <?php
-        if ($webchat_url != "none") {
-            echo '            <a href="'.$webchat_url.'">join the IRC</a>.';
-        } else {
-            $irpg_chan_clean = str_replace('#', '', $irpg_chan);
-            echo '            <a href="irc://'.$irpg_network.'/'.$irpg_chan_clean.'">join the IRC</a>.';
-        }
             $hits = file("hits.db");
             $fp = fopen("hits.db", "w");
 			$found = 0;
@@ -48,7 +27,7 @@
             }
             fclose($fp);
 ?>
-        </p>
+            </p>
         </div>
     </div>
     </body>

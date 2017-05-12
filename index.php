@@ -3,7 +3,6 @@
     $irpg_page_title = "Game Info";
     include("header.php");
 ?>
-    <h1>Game Info</h1>
     <p>The Idle RPG is just what it sounds like: an RPG in which the players
     idle. In addition to merely gaining levels, players can find items and
     battle other players. However, this is all done for you; you just idle.
@@ -13,8 +12,9 @@
     <h2>Location</h2>
     <p> 
       The Idle RPG can be played on the
-      <a href="<?php echo $net_url;?>"><?php echo $net_name;?> Network</a> in the
-      channel <?php echo $irpg_chan;?>.
+      <a href="<?php echo $net_url; ?>"><?php echo $net_name;?></a> in the
+      channel <?php echo $irpg_chan; ?>. See <a href="<?php echo $net_serverurl; ?>">this</a>
+      link for a list of servers.
     </p>
     
 
@@ -22,10 +22,10 @@
     
       <p>To register, simply:</p>
       
-        <div class="well well-sm">
+        <code>
           /msg <?php echo $irpg_bot;?> REGISTER &lt;char name&gt; &lt;password&gt;
           &lt;char class&gt;
-        </div>
+        </code>
       
       <p>Where 'char name' can be up to 16 chars long, 'password' can be up
       to 8 characters, and 'char class' can be up to 30 chars.</p>
@@ -35,9 +35,9 @@
     
       <p>To login, simply:</p>
       
-        <div class="well well-sm">
+        <code>
           /msg <?php echo $irpg_bot;?> LOGIN &lt;char name&gt; &lt;password&gt;
-        </div>
+        </code>
       
       <p>This is a p0 (see <a href="#penalties">Penalties</a>) command.</p>
     
@@ -46,9 +46,9 @@
     
       <p>To logout, simply:</p>
       
-        <div class="well well-sm">
+        <code>
           /msg <?php echo $irpg_bot;?> LOGOUT
-        </div>
+        </code>
       
       <p>This is a p20 (see <a href="#penalties">Penalties</a>) command.</p>
     
@@ -57,9 +57,9 @@
     
       <p>To change your password, simply:</p>
       
-        <div class="well well-sm">
+        <code>
           /msg <?php echo $irpg_bot;?> NEWPASS &lt;new password&gt;
-        </div>
+        </code>
       
       <p>This is a p0 (see <a href="#penalties">Penalties</a>) command.</p>
       <p>If you have forgotten your password, please use the <a href="#info">
@@ -72,9 +72,9 @@
     
       <p>To remove your account, simply:</p>
       
-        <div class="well well-sm">
+        <code>
           /msg <?php echo $irpg_bot;?> REMOVEME
-        </div>
+        </code>
       
       <p>This is a p0 (see <a href="#penalties">Penalties</a>) command :^)</p>
     
@@ -83,9 +83,9 @@
     
       <p>To change your alignment, simply:</p>
       
-        <div class="well well-sm">
+        <code>
           /msg <?php echo $irpg_bot;?> ALIGN &lt;good|neutral|evil&gt;
-        </div>
+        </code>
       
       <p>This is a p0 (see <a href="#penalties">Penalties</a>) command.</p>
       <p>Your alignment can affect certain aspects of the game. You may align
@@ -110,9 +110,9 @@
     
       <p>To see some simple information on the bot, simply:</p>
       
-        <div class="well well-sm">
+        <code>
           /msg <?php echo $irpg_bot;?> INFO
-        </div>
+        </code>
       
       <p>This is a p0 (see <a href="#penalties">Penalties</a>) command.</p>
       <p>This command gives info such as to which server the bot is connected
@@ -126,15 +126,15 @@
       <p>To gain levels, you must only be logged in and idle. The time
       between levels is based on your character level, and is calculated
       by the formula:</p>
-      <div class="well well-sm">
+      
         600*(1.16^YOUR_LEVEL)
-      </div>
+      
       <p>Where ^ represents the exponentiation operator.</p>
       <p>Very high levels are calculated differently as of version 3.0. Levels
       after level 60 have a next time to level of:</p>
-      <div class="well well-sm">
+      
         (time to level @ 60) + ((1 day) * (level - 60))
-      </div>
+      
       <p>The exponent method code had simply gotten to that point that levels
       were taking too long to complete.</p>
     
@@ -144,9 +144,9 @@
       <p>To see the active quest, its users, and its time left to
       completion:</p>
       
-        <div class="well well-sm">
+        <code>
           /msg <?php echo $irpg_bot;?> QUEST
-        </div>
+        </code>
       
       <p>This is a p0 (see <a href="#penalties">Penalties</a>) command.</p>
     
@@ -155,9 +155,9 @@
     
       <p>To see whether you are logged on, simply:</p>
       
-        <div class="well well-sm">
+        <code>
           /msg <?php echo $irpg_bot;?> WHOAMI
-        </div>
+        </code>
       
       <p>This is a p0 (see <a href="#penalties">Penalties</a>) command.</p>
     
@@ -171,7 +171,7 @@
       time to level and are based on your character level. The formulae
       are as follows:</p>
 
-      <table id="penalty" class="penalty">
+      <table id="penalty" class="table penalty">
         <tr>
           <th>Nick change</th>
           <td>30*(1.14^(YOUR_LEVEL))</td>
@@ -227,12 +227,12 @@
       lower value than you do of rolling one of a higher value level. The exact
       formula is as follows:</p>
 
-      <div class="well well-sm">
+      
            for each 'number' from 1 to YOUR_LEVEL*1.5<br />
            &nbsp;&nbsp;you have a 1 / ((1.4)^number) chance to find an
            item at this level<br />
            end for
-      </div>
+      
 
       <p>As for item type, you have an equal chance to roll any type.</p>
     
@@ -270,10 +270,10 @@
       <p>If you lose, you will be penalized time. The penalty is calculated
       using the formula:</p>
 
-      <div class="well well-sm">
+      
         ((the larger number of (OPPONENT_LEVEL/7) and 7) / 100) *
         YOUR_NEXT_TIME_TO_LEVEL
-      </div>
+      
 
       <p>This means that you gain no less than 7% of your next time to level.
       If you lose, your opponent is not awarded any time.</p>
@@ -301,7 +301,7 @@
       <p>As of v2.1.2, after level 25, you have a chance to roll items
       significantly higher than items you would normally find at that level.
       These are unique items, and have the following stats:</p>
-      <table id="uniques" class="uniques">
+      <table id="uniques" class="table uniques">
         <tr>
           <th>Name</th>
           <th>Item Level Range</th>
@@ -358,7 +358,7 @@
         </tr>
       </table>
     
-    <h2 name="HandOfGod">The Hand of God</h2>
+    <h2>The Hand of God</h2>
     
       <p>As of v3.0, every online user has a (roughly) 1/20 chance per day
       of a "Hand of God" affecting them. A HoG can help or hurt your character
@@ -383,7 +383,7 @@
       to level.</p>
     
 
-    <h2 name="TeamBattle">Team Battles</h2>
+    <h2>Team Battles</h2>
     
       <p>As of v3.0, every online user has (roughly) 1/4 chance per day of
       being involved in a  'team battle.' Team battles pit three online
@@ -457,6 +457,23 @@
       item from the challengee. Only items of a higher value are stolen, and
       the challenger's old item is given to the challengee in a moment of pity.
       </p>
+    
+
+
+    <h2>Credits</h2>
+    
+      <p>Many thanks to version 3.0's map creators, res0 and Jeb! The game
+      wouldn't be the same without you.</p>
+      <p>
+        The IRPG would not be possible without help from a lot of people.
+        To jwbozzy, yawnwraith, Tosirap, res0, dwyn, Parallax, protomek,
+        Bert, clavicle, drdink, jeff, rasher, Sticks, Nerje, Asterax,
+        emad, inkblot(!), schmolli, mikegrb, mumkin, sean, Minhiriath,
+        and Dan, I give many thanks. Unfortunately, this list has grown too
+        large to maintain. More user contributions can be seen in the
+        <a href="http://idlerpg.net/ChangeLog.txt">ChangeLog</a>.
+      </p>
+    
 
 <?php include("footer.php");?>
 

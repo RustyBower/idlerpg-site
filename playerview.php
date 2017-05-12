@@ -13,6 +13,7 @@
     
     include("header.php");
     include("commonfunctions.php");
+<<<<<<< HEAD
     echo "<ul class=\"nav nav-tabs\" id=\"myTab\">\n".
          "<li class=\"active\"><a href=\"#home\">Player Info</a></li>\n".
          "<li><a href=\"#items\">Items</a></li>\n".
@@ -20,6 +21,9 @@
          "<li><a href=\"#modifiers\">Character Modifiers</a></li>\n".
          "</ul>\n".
          "<div class=\"tab-content\">\n";
+=======
+    echo "<h1>Player Info</h1>";
+>>>>>>> upstream/master
     $file = fopen($irpg_db,"r");
     fgets($file,1024); // skip top comment
     $found=0;
@@ -56,9 +60,13 @@
     else {
         $class=htmlentities($class);
         /* if we htmlentities($user), then we cannot use links with it. */
+<<<<<<< HEAD
         echo "<div class=\"tab-pane active\" id=\"home\">".
              "<h2>Summary</h2>\n".
              "      <p><span class=\"lead\"><b>User:</b> ".htmlentities($user)."</span><br />\n".
+=======
+        echo "      <p><b>User:</b> ".htmlentities($user)."<br />\n".
+>>>>>>> upstream/master
              "      <b>Class:</b> $class<br />\n".
              "      <b>Admin?:</b> ".($isadmin?"Yes":"No")."<br />\n".
              "      <b>Level:</b> $level<br />\n".
@@ -71,11 +79,16 @@
              "      <b>Current position:</b> [$x,$y]<br />\n".
              "      <b>Alignment:</b> ".($alignment=='e'?"Evil":($alignment=='n'?"Neutral":"Good"))."<br />\n".
              "      <b>XML:</b> [<a href=\"xml.php?player=".urlencode($user)."\">link</a>]</p>\n".
+<<<<<<< HEAD
              "\n".
              "    <h2>Map</h2>\n".
              "    ".($showmap?"<div id=\"map\"><img src=\"makemap.php?player=".urlencode($user)."\"></div>\n\n":"<p><a href=\"?player=".urlencode($user)."&showmap=1\">Show map</a></p>\n\n")."".
              "</div>".
              "<div class=\"tab-pane\" id=\"items\">\n".
+=======
+             "    <h2>Map</h2>\n".
+             "    ".($showmap?"<div id=\"map\"><img src=\"makemap.php?player=".urlencode($user)."\"></div>\n\n":"<p><a href=\"?player=".urlencode($user)."&showmap=1\">Show map</a></p>\n\n")."".
+>>>>>>> upstream/master
              "    <h2>Items</h2>\n<p>";
         ksort($item);
         $sum = 0;
@@ -109,9 +122,13 @@
             $sum += $val;
         }
         echo "      <br />\n      sum: $sum<br />\n".
+<<<<<<< HEAD
              "    </p>\n".
              "</div>\n".
              "<div class=\"tab-pane\" id=\"penalties\">\n".
+=======
+             "    </p>".
+>>>>>>> upstream/master
              "    <h2>Penalties</h2>\n".
              "    <p>\n";
 
@@ -136,8 +153,11 @@
             }
         }
         fclose($file);
+<<<<<<< HEAD
         echo "</div>\n".
              "<div class=\"tab-pane fade\" id=\"modifiers\">";
+=======
+>>>>>>> upstream/master
         if (!is_null($temp) && count($temp)) {
             echo('<h2>');
             echo $_GET['allmods']!=1?"Recent ":"";
@@ -151,23 +171,24 @@
             }
             else {
                 end($temp);
-                for ($i=0;$i<200;++$i) prev($temp);
+                for ($i=0;$i<4;++$i) prev($temp);
                 for ($line=trim(current($temp));$line;$line=trim(next($temp))) {
                     $line=htmlentities(trim($line));
                     echo "      $line<br />\n";
                 }
             }
         }
-        if ($_GET['allmods'] != 1 && count($temp) > 5)
-        {
+        if ($_GET['allmods'] != 1 && count($temp) > 5) {
 ?>
-
       <br />
       [<a href="<?php echo $_SERVER['PHP_SELF']."?player=".urlencode($user);?>&amp;allmods=1">View all Character Modifiers</a> (<?=count($temp)?>)]
       </p>
 <?php
         }
+<<<<<<< HEAD
         echo "</div>\n";
+=======
+>>>>>>> upstream/master
     }
     include("footer.php");
 ?>
